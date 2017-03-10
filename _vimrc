@@ -1,5 +1,8 @@
 execute pathogen#infect() 
 
+" EMMET TAB AUTOCOMPLETION
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
+
 " Activate all the handy Windows key-bindings we're used to.
 source $VIMRUNTIME/mswin.vim 
 
@@ -26,8 +29,8 @@ colorscheme gruvbox
 
 if has("gui_running")
   " Set a nicer font.
-  " set guifont=Consolas:h11:cDEFAULT
-     set guifont=InputMono:h10
+  set guifont=Consolas:h10:cDEFAULT
+ "    set guifont=InputMono:h10
   "  set guifont=*
 
 "  if has('gui_win32')
@@ -127,7 +130,8 @@ map <F2> :NERDTreeToggle<CR>
 " let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 " ignore node modlues git and DS_Store
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-
+" always show hidden files
+let g:ctrlp_show_hidden = 1
 
 " 'c' - the directory of the current file.
 " 'r' - the nearest ancestor that contains one of these directories or files: .git .hg .svn .bzr
